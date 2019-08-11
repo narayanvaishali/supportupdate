@@ -22,7 +22,7 @@ export function useInput(name, defaultValue, validate, regex) {
  function handleValidate() {
     const valid = validate && validate(value, regex)
     setError(!valid);
-   return valid; 
+    return valid; 
  }
 
  return {
@@ -42,25 +42,27 @@ export function useSubmit(inputs, success) {
  // set up the state for the inputs causing errors
  const [errorItems, setErrorItems] = useState(null);
 
- // handle submit
+  // handle submit
  function handleSubmit(e) {
    e.preventDefault(); //prevent page refresh
 
    //validate every input (in case there was no blur event)
-   const errorItems = inputs.filter(input => !input.validate());
-   //persist the error items to state
-   setErrorItems(errorItems);
+   const errorItems = inputs.filter(input => 
+          console.log ('handlesubmit : ' + JSON.stringify(input)));
+        // !input.validate());
+        //persist the error items to state
+        setErrorItems(errorItems);
 
-   // if no errors, call success with name, value pairs as parameter
-   if (errorItems && errorItems.length === 0) {
-     success &&
-       success(
-         inputs.map(({ props: { name, value } }) => ({
-           name,
-           value
-         }))
-       );
-   } 
+        // if no errors, call success with name, value pairs as parameter
+        if (errorItems && errorItems.length === 0) {
+          success &&
+            success(
+              inputs.map(({ props: { name, value } }) => ({
+                name,
+                value
+              }))
+            );
+        } 
  }
 
  return {
