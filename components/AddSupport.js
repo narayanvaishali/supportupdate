@@ -1,6 +1,23 @@
+/*
+  https://appdividend.com/2018/11/13/react-material-ui-example-tutorial/
+  https://reactgo.com/material-ui-react-tutorial/
+*/
+
 import React, { useContext, useState } from 'react';
 import { SupportContext } from '../contexts/SupportContext';
 
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import TypoGraphy from '@material-ui/core/Typography';
+import NativeSelect from '@material-ui/core/NativeSelect';
+
+import {
+  FormControl,
+  InputLabel,
+  Input,
+  Button,
+  TextField
+} from "@material-ui/core";
 
 const NewSupportForm = () => {
   const { addSupport } = useContext(SupportContext);
@@ -13,7 +30,7 @@ const NewSupportForm = () => {
   const [timespent, setTimespent] = useState('');
 
     const stafflist = [
-      { 'id': 0, 'staffname': '--select staff--'}, 
+      { 'id': 0, 'staffname': ''}, 
       { 'id': 1, 'staffname': 'VP' }, 
       { 'id': 2, 'staffname': 'TA' }, 
       { 'id': 3, 'staffname': 'SKT' }, 
@@ -25,7 +42,7 @@ const NewSupportForm = () => {
             );
   
     const currentstatuslist = [
-      { 'id': 0, 'status': '--select status--'}, 
+      { 'id': 0, 'status': ''}, 
       { 'id': 1, 'status': 'passed to ps' }, 
       { 'id': 2, 'status': 'resolved' }, 
       { 'id': 3, 'status': 'investigating' }, 
@@ -36,7 +53,7 @@ const NewSupportForm = () => {
             );
 
     const prioritylist = [
-      { 'id': 0, 'priority': '--select priority--'}, 
+      { 'id': 0, 'priority': ''}, 
       { 'id': 1, 'priority': 'high' }, 
       { 'id': 2, 'priority': 'urgent' }, 
       { 'id': 3, 'priority': 'low' }, 
@@ -60,38 +77,67 @@ const NewSupportForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-          <select onChange={(e) => setstaffname(e.target.value)}>
-              {optionItems}
-          </select>
-      </div> 
-      <div>
-        <input type="text" placeholder="ZD ID" value={ZD_ID}
-          onChange={(e) => setZD_ID(e.target.value)} />
+
+  <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          margin: 20,
+          padding: 20
+        }}
+      >
+        <form style={{ width: "80%" }}  onSubmit={handleSubmit}>
+          <h1>Add Support Update</h1>
+
+          <FormControl margin="normal" fullWidth>
+              <InputLabel htmlFor="uncontrolled-native">staff name</InputLabel>
+              <NativeSelect name="staffname"  required  
+                  onChange={(e) => setstaffname(e.target.value)}>
+                  {optionItems}
+              </NativeSelect>
+          </FormControl>
+
+          <FormControl margin="normal" fullWidth>
+            <input type="text" placeholder="ZD ID" value={ZD_ID}
+              onChange={(e) => setZD_ID(e.target.value)}  required />
+          </FormControl>
+
+          <FormControl margin="normal" fullWidth>
+              <input type="text" placeholder="date worked" value={dateworked}
+                onChange={(e) => setDateworked(e.target.value)}  required  />
+          </FormControl>
+
+          <FormControl margin="normal" fullWidth>
+          <InputLabel htmlFor="uncontrolled-native">current status</InputLabel>
+           <NativeSelect name="currentstatus"  required  
+                  onChange={(e) => setCurrentstatus(e.target.value)}>
+                    {statusItems}
+            </NativeSelect>
+
+          </FormControl>
+
+          <FormControl margin="normal" fullWidth>           
+             <InputLabel htmlFor="uncontrolled-native">priority</InputLabel>
+              <NativeSelect name="priority"   required    
+                  onChange={(e) => setPriority(e.target.value)}>
+                    {priorityItems}
+            </NativeSelect>
+
+          </FormControl>
+
+          <FormControl margin="normal" fullWidth>
+                <input type="text" placeholder="time spent" value={timespent}  required  
+                  onChange={(e) => setTimespent(e.target.value)} />
+          </FormControl>
+          <FormControl margin="normal">
+          <Button variant="contained" color="primary" size="medium" type="submit">
+            Send
+          </Button>
+          </FormControl>
+        </form>
       </div>
-      <div>
-            <input type="text" placeholder="date worked" value={dateworked}
-            onChange={(e) => setDateworked(e.target.value)} />
-       </div>
-      <div>
-              <select onChange={(e) => setCurrentstatus(e.target.value)}>
-                {statusItems}
-              </select>
-        </div>
-        <div>
-            <select onChange={(e) => setPriority(e.target.value)}>
-              {priorityItems}
-        </select>
-      </div>    
-      <div>
-         <input type="text" placeholder="time spent" value={timespent}
-        onChange={(e) => setTimespent(e.target.value)} />
-      </div>    
-      <div>
-      <input type="submit" value="add support" />
-      </div>  
-    </form>
+
+
   );
 }
  
