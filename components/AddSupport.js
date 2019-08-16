@@ -10,6 +10,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import TypoGraphy from '@material-ui/core/Typography';
 import NativeSelect from '@material-ui/core/NativeSelect';
+import TextField from '@material-ui/core/TextField';
 
 import {
   FormControl,
@@ -98,13 +99,41 @@ const NewSupportForm = () => {
           </FormControl>
 
           <FormControl margin="normal" fullWidth>
-            <input type="text" placeholder="ZD ID" value={ZD_ID}
-              onChange={(e) => setZD_ID(e.target.value)}  required />
+               <TextField
+                id="outlined-uncontrolled"
+                label="ZD ID"
+                defaultValue="foo"               
+                margin="normal"
+                variant="outlined"
+                value={ZD_ID}
+                required
+                onChange={(e) => setZD_ID(e.target.value)}
+              />
           </FormControl>
 
           <FormControl margin="normal" fullWidth>
-              <input type="text" placeholder="date worked" value={dateworked}
-                onChange={(e) => setDateworked(e.target.value)}  required  />
+              <TextField
+                id="outlined-uncontrolled"
+                label="date worked"
+                defaultValue="foo"               
+                margin="normal"
+                variant="outlined"
+                value={dateworked}
+                required
+                onChange={(e) => setDateworked(e.target.value)}
+              />
+          </FormControl>
+           <FormControl margin="normal" fullWidth>
+                <TextField
+                id="outlined-uncontrolled"
+                label="time spent"
+                defaultValue="foo"               
+                margin="normal"
+                variant="outlined"
+                value={timespent}
+                required
+                onChange={(e) => setTimespent(e.target.value)}
+              />
           </FormControl>
 
           <FormControl margin="normal" fullWidth>
@@ -125,10 +154,7 @@ const NewSupportForm = () => {
 
           </FormControl>
 
-          <FormControl margin="normal" fullWidth>
-                <input type="text" placeholder="time spent" value={timespent}  required  
-                  onChange={(e) => setTimespent(e.target.value)} />
-          </FormControl>
+
           <FormControl margin="normal">
           <Button variant="contained" color="primary" size="medium" type="submit">
             Send
