@@ -91,10 +91,10 @@ const NewSupportForm = () => {
 
           <FormControl margin="normal" fullWidth>
               <InputLabel htmlFor="uncontrolled-native">staff name</InputLabel>
-              <NativeSelect name="staffname"  required  value={staffname}
-                  onChange={(e) => setstaffname(e.target.value)}>
-                  {optionItems}
-              </NativeSelect>
+                <NativeSelect name="staffname"  required  value={staffname}
+                    onChange={(e) => setstaffname(e.target.value)}>
+                    {optionItems}
+                </NativeSelect>
           </FormControl>
 
           <FormControl margin="normal" fullWidth>
@@ -106,6 +106,7 @@ const NewSupportForm = () => {
                 variant="outlined"
                 value={ZD_ID}
                 required 
+                type="number"
                 onChange={(e) => setZD_ID(e.target.value)}
               />
           </FormControl>
@@ -113,12 +114,13 @@ const NewSupportForm = () => {
           <FormControl margin="normal" fullWidth>
               <TextField
                 id="outlined-uncontrolled"
-                label="date worked"
-                defaultValue="foo"               
+                label=""
+                defaultValue=""               
                 margin="normal"
                 variant="outlined"
                 value={dateworked}
                 required
+                type="date"
                 onChange={(e) => setDateworked(e.target.value)}
               />
           </FormControl>
@@ -131,6 +133,7 @@ const NewSupportForm = () => {
                 variant="outlined"
                 value={timespent}
                 required
+                type="number"
                 onChange={(e) => setTimespent(e.target.value)}
               />
           </FormControl>
