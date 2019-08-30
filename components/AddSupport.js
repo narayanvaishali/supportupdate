@@ -78,7 +78,6 @@ const NewSupportForm = () => {
   }
 
   return (
-
   <div
         style={{
           display: "flex",
@@ -92,7 +91,7 @@ const NewSupportForm = () => {
 
           <FormControl margin="normal" fullWidth>
               <InputLabel htmlFor="uncontrolled-native">staff name</InputLabel>
-              <NativeSelect name="staffname"  required  
+              <NativeSelect name="staffname"  required  value={staffname}
                   onChange={(e) => setstaffname(e.target.value)}>
                   {optionItems}
               </NativeSelect>
@@ -106,7 +105,7 @@ const NewSupportForm = () => {
                 margin="normal"
                 variant="outlined"
                 value={ZD_ID}
-                required
+                required 
                 onChange={(e) => setZD_ID(e.target.value)}
               />
           </FormControl>
@@ -138,7 +137,7 @@ const NewSupportForm = () => {
 
           <FormControl margin="normal" fullWidth>
           <InputLabel htmlFor="uncontrolled-native">current status</InputLabel>
-           <NativeSelect name="currentstatus"  required  
+           <NativeSelect name="currentstatus"  required  value={currentstatus}  
                   onChange={(e) => setCurrentstatus(e.target.value)}>
                     {statusItems}
             </NativeSelect>
@@ -147,7 +146,7 @@ const NewSupportForm = () => {
 
           <FormControl margin="normal" fullWidth>           
              <InputLabel htmlFor="uncontrolled-native">priority</InputLabel>
-              <NativeSelect name="priority"   required    
+              <NativeSelect name="priority"   required   value={priority}  
                   onChange={(e) => setPriority(e.target.value)}>
                     {priorityItems}
             </NativeSelect>
