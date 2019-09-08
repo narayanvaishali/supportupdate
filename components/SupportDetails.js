@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
     minWidth: 650,
     padding: 30,
     background: 'lightblue',
-    color: 'darkblue'
+    fontFamily: ['Courier', 'Helvetica'],
   },
 }));
 

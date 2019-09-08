@@ -24,7 +24,8 @@ const useStyles = makeStyles(theme => ({
   },
 
   font: {
-fontSize: '14px', fontWeight:'bold'
+      fontSize: '14px', fontWeight:'bold',
+      fontFamily: ['Courier', 'Helvetica'],
   }
 }));
 
