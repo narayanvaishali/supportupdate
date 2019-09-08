@@ -11,6 +11,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import TypoGraphy from '@material-ui/core/Typography';
 import NativeSelect from '@material-ui/core/NativeSelect';
 import TextField from '@material-ui/core/TextField';
+import { makeStyles } from '@material-ui/core/styles';
 
 import {
   FormControl,
@@ -19,6 +20,14 @@ import {
   Button,
   TextField
 } from "@material-ui/core";
+
+const useStyles = makeStyles({
+  root: {
+    background: 'black',
+    color: 'white'
+  }
+});
+
 
 const NewSupportForm = () => {
   const { addSupport } = useContext(SupportContext);
@@ -30,6 +39,7 @@ const NewSupportForm = () => {
   const [priority, setPriority] = useState('');
   const [timespent, setTimespent] = useState('');
 
+ const styles = useStyles();
     const stafflist = [
       { 'id': 0, 'staffname': ''}, 
       { 'id': 1, 'staffname': 'VP' }, 
@@ -83,14 +93,16 @@ const NewSupportForm = () => {
           display: "flex",
           justifyContent: "center",
           margin: 20,
-          padding: 20
+          padding: 20,
+           background: 'lightblue',
+          color: 'darkblue'
         }}
       >
-        <form style={{ width: "80%" }}  onSubmit={handleSubmit}>
-          <h1>Add Support Update</h1>
+        <form style={{ width: "45%" }}  onSubmit={handleSubmit}>
+          <h1>Add Support</h1>
 
           <FormControl margin="normal" fullWidth>
-              <InputLabel htmlFor="uncontrolled-native">staff name</InputLabel>
+              <InputLabel htmlFor="uncontrolled-native" >staff name</InputLabel>
                 <NativeSelect name="staffname"  required  value={staffname}
                     onChange={(e) => setstaffname(e.target.value)}>
                     {optionItems}

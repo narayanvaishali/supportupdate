@@ -9,20 +9,32 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
-
+const useStyles = makeStyles(theme => ({
+  root: {
+    width: '100%',
+    marginTop: theme.spacing(3),
+    overflowX: 'auto',
+    minWidth: 650,
+    padding: 30,
+    background: 'lightblue',
+    color: 'darkblue'
+  },
+}));
 
 const SupportDetails = ({ support }) => {
   const { removeSupport } = useContext(SupportContext);
-  
+  const classes = useStyles();
+
   return (
-              <TableBody>
+              <TableBody  className={classes.root}>
                   <TableRow key={support.id}  onClick={() => removeSupport(support.id)}>
-                    <TableCell align="left">{support.staffname}</TableCell>
-                    <TableCell align="center">{support.ZD_ID}</TableCell>
-                    <TableCell align="left">{support.dateworked}</TableCell>
-                    <TableCell align="left">{support.priority}</TableCell>
-                    <TableCell align="left">{support.currentstatus}</TableCell>
-                    <TableCell align="center">{support.timespent}</TableCell>
+                    <TableCell>{support.staffname}
+                    </TableCell>
+                    <TableCell>{support.ZD_ID}</TableCell>
+                    <TableCell>{support.dateworked}</TableCell>
+                    <TableCell>{support.priority}</TableCell>
+                    <TableCell>{support.currentstatus}</TableCell>
+                    <TableCell>{support.timespent}</TableCell>
                   </TableRow>
               </TableBody>
   );

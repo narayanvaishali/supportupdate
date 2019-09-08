@@ -19,7 +19,13 @@ const useStyles = makeStyles(theme => ({
   },
   table: {
     minWidth: 650,
+    background: 'grey',
+    fontSize : '63px'
   },
+
+  font: {
+fontSize: '14px', fontWeight:'bold'
+  }
 }));
 
 const SupportList =  () => {
@@ -39,12 +45,12 @@ const SupportList =  () => {
             <Table className={classes.table}>
               <TableHead>
                 <TableRow>
-                  <TableCell>staffname</TableCell>
-                  <TableCell align="right">ZD ID</TableCell>
-                  <TableCell align="right">Date Worked</TableCell>
-                  <TableCell align="right">Priority</TableCell>
-                  <TableCell align="right">Current Status</TableCell>
-                  <TableCell align="right">Time Spent</TableCell>
+                  <TableCell  className={classes.font}>Staff Name</TableCell>
+                  <TableCell  className={classes.font}>ZD ID</TableCell>
+                  <TableCell  className={classes.font}>Date Worked</TableCell>
+                  <TableCell  className={classes.font}>Priority</TableCell>
+                  <TableCell  className={classes.font}>Current Status</TableCell>
+                  <TableCell  className={classes.font}>Time Spent</TableCell>
                 </TableRow>
               </TableHead>
                {supportlist.map(s => {
