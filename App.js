@@ -5,17 +5,25 @@ import React from "react";
 //import Form from './components/Form';
 //import AddSupportUpdate from './components/AddSupportUpdate'
 
+import { MuiThemeProvider } from '@material-ui/core/styles';
+import { supporttheme } from './components/theme';
+import GlobalStyle from './components/GlobalStyle';
+
 import SupportContextProvider from './contexts/SupportContext';
 import SupportList from './components/SupportList';
 import NewSupportForm from './components/AddSupport';
 
+
 // Let's convert App from class to function to get into the mood!
 function App() {
  return (
-   <SupportContextProvider>
-        <NewSupportForm />
-        <SupportList />
-      </SupportContextProvider>
+   <MuiThemeProvider theme={supporttheme}>
+   <GlobalStyle/>
+       <SupportContextProvider>
+          <NewSupportForm />
+          <SupportList />
+        </SupportContextProvider>
+    </MuiThemeProvider>
  );
 }
 

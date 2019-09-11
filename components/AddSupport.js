@@ -11,7 +11,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import TypoGraphy from '@material-ui/core/Typography';
 import NativeSelect from '@material-ui/core/NativeSelect';
 import TextField from '@material-ui/core/TextField';
-import { makeStyles } from '@material-ui/core/styles';
+//import { makeStyles } from '@material-ui/core/styles';
+import { withTheme } from '@material-ui/core/styles';
 
 import {
   FormControl,
@@ -21,13 +22,13 @@ import {
   TextField
 } from "@material-ui/core";
 
-const useStyles = makeStyles({
+/*const useStyles = makeStyles({
   root: {
     background: 'black',
     color: 'white'
   }
-});
-
+});*/
+//const styles = useStyles();
 
 const NewSupportForm = () => {
   const { addSupport } = useContext(SupportContext);
@@ -38,8 +39,7 @@ const NewSupportForm = () => {
   const [currentstatus, setCurrentstatus] = useState('');
   const [priority, setPriority] = useState('');
   const [timespent, setTimespent] = useState('');
-
- const styles = useStyles();
+ 
     const stafflist = [
       { 'id': 0, 'staffname': ''}, 
       { 'id': 1, 'staffname': 'VP' }, 
@@ -89,16 +89,16 @@ const NewSupportForm = () => {
 
   return (
   <div
-        style={{
+      /*  style={{
           display: "flex",
           justifyContent: "center",
           margin: 20,
           padding: 20,
            background: 'lightblue',
           color: 'darkblue'
-        }}
+        }}*/
       >
-        <form style={{ width: "45%" }}  onSubmit={handleSubmit}>
+        <form  onSubmit={handleSubmit}>
           <h1>Add Support</h1>
 
           <FormControl margin="normal" fullWidth>
@@ -181,4 +181,4 @@ const NewSupportForm = () => {
   );
 }
  
-export default NewSupportForm;
+export default (NewSupportForm);

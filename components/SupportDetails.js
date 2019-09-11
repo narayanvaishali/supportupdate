@@ -26,7 +26,7 @@ const SupportDetails = ({ support }) => {
   const classes = useStyles();
 
   return (
-              <TableBody  className={classes.root}>
+              <TableBody >
                   <TableRow key={support.id}  onClick={() => removeSupport(support.id)}>
                     <TableCell>{support.staffname}
                     </TableCell>

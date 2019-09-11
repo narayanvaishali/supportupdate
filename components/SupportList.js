@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { SupportContext } from '../contexts/SupportContext';
 import SupportDetails from './SupportDetails';
 
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, useTheme } from "@material-ui/styles";
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -10,8 +10,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
-
-const useStyles = makeStyles(theme => ({
+/*const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
     marginTop: theme.spacing(3),
@@ -27,12 +26,14 @@ const useStyles = makeStyles(theme => ({
       fontSize: '14px', fontWeight:'bold',
       fontFamily: ['Courier', 'Helvetica'],
   }
-}));
+}));*/
 
 const SupportList =  () => {
   const { supportlist } = useContext(SupportContext);
-  const classes = useStyles();
-
+ // const classes = useStyles();
+ const theme1 = useTheme();
+ console.log(theme1)
+ 
   return(
    /* <div className="book-list">
       <ul>
@@ -41,17 +42,17 @@ const SupportList =  () => {
         })}
       </ul>
     </div>*/
-    <div style={{ marginTop: 20, padding: 30 }}>
-        <Paper className={classes.root}>
-            <Table className={classes.table}>
+    <div >
+        <Paper>
+            <Table >
               <TableHead>
                 <TableRow>
-                  <TableCell  className={classes.font}>Staff Name</TableCell>
-                  <TableCell  className={classes.font}>ZD ID</TableCell>
-                  <TableCell  className={classes.font}>Date Worked</TableCell>
-                  <TableCell  className={classes.font}>Priority</TableCell>
-                  <TableCell  className={classes.font}>Current Status</TableCell>
-                  <TableCell  className={classes.font}>Time Spent</TableCell>
+                  <TableCell>Staff Name</TableCell>
+                  <TableCell>ZD ID</TableCell>
+                  <TableCell >Date Worked</TableCell>
+                  <TableCell>Priority</TableCell>
+                  <TableCell>Current Status</TableCell>
+                  <TableCell>Time Spent</TableCell>
                 </TableRow>
               </TableHead>
                {supportlist.map(s => {
