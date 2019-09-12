@@ -12,7 +12,8 @@ import TypoGraphy from '@material-ui/core/Typography';
 import NativeSelect from '@material-ui/core/NativeSelect';
 import TextField from '@material-ui/core/TextField';
 //import { makeStyles } from '@material-ui/core/styles';
-import { withTheme } from '@material-ui/core/styles';
+//import { withTheme } from '@material-ui/core/styles';
+import { useTheme } from "@material-ui/styles";
 
 import {
   FormControl,
@@ -31,6 +32,10 @@ import {
 //const styles = useStyles();
 
 const NewSupportForm = () => {
+  const theme = useTheme();
+
+  console.log('theme ' + JSON.stringify(theme.table.div));
+
   const { addSupport } = useContext(SupportContext);
 
   const [staffname, setstaffname] = useState('');
@@ -88,7 +93,7 @@ const NewSupportForm = () => {
   }
 
   return (
-  <div
+  <div style = {theme.table.div}
       /*  style={{
           display: "flex",
           justifyContent: "center",
@@ -99,7 +104,7 @@ const NewSupportForm = () => {
         }}*/
       >
         <form  onSubmit={handleSubmit}>
-          <h1>Add Support</h1>
+          <h1 style={theme.table.h1}>Add Support</h1>
 
           <FormControl margin="normal" fullWidth>
               <InputLabel htmlFor="uncontrolled-native" >staff name</InputLabel>
@@ -156,7 +161,6 @@ const NewSupportForm = () => {
                   onChange={(e) => setCurrentstatus(e.target.value)}>
                     {statusItems}
             </NativeSelect>
-
           </FormControl>
 
           <FormControl margin="normal" fullWidth>           
@@ -165,14 +169,11 @@ const NewSupportForm = () => {
                   onChange={(e) => setPriority(e.target.value)}>
                     {priorityItems}
             </NativeSelect>
-
           </FormControl>
-
-
-          <FormControl margin="normal">
-          <Button variant="contained" color="primary" size="medium" type="submit">
-            Send
-          </Button>
+          <FormControl style = {theme.table.formControl}>
+                <Button style = {theme.table.btn.primary}  type="submit">
+                  Send
+                </Button>
           </FormControl>
         </form>
       </div>

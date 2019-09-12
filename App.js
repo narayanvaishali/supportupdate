@@ -7,25 +7,25 @@ import React from "react";
 
 //https://stackoverflow.com/questions/56496201/how-to-use-usetheme-hook-from-material-ui
 
-import { MuiThemeProvider } from '@material-ui/core/styles';
+//import { MuiThemeProvider } from '@material-ui/core/styles';
 import { supporttheme } from './components/theme';
-import GlobalStyle from './components/GlobalStyle';
+//import GlobalStyle from './components/GlobalStyle';
 
 import SupportContextProvider from './contexts/SupportContext';
 import SupportList from './components/SupportList';
 import NewSupportForm from './components/AddSupport';
 
+import { ThemeProvider, useTheme } from "@material-ui/styles";
 
 // Let's convert App from class to function to get into the mood!
 function App() {
  return (
-   <MuiThemeProvider theme={supporttheme}>
-   <GlobalStyle/>
+    <ThemeProvider theme={supporttheme}>
        <SupportContextProvider>
           <NewSupportForm />
           <SupportList />
         </SupportContextProvider>
-    </MuiThemeProvider>
+       </ThemeProvider>
  );
 }
 

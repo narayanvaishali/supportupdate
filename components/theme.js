@@ -1,9 +1,13 @@
+//https://api.flutter.dev/flutter/material/Scaffold/backgroundColor.html
+//https://material-ui.com/customization/color/
+//https://www.quackit.com/css/properties/
+
 import { createMuiTheme } from '@material-ui/core/styles';
 
 const palette = {
   type: 'light',
   primary: {
-    light: '#d8cfb3',
+    light: '#9c27b0',
     main: '#3f323c',
     dark: '#964713',
   },
@@ -27,16 +31,60 @@ const palette = {
     minWidth: 700,
     backgroundColor : 'blue'
   },
+  divClass: {
+          spacing: "40px",
+          color: "yellow",
+          fontSize: "30px"
+        }
 };
 
 const table = {
-  
-  tablebody: {
+  tablehead: {
     minWidth: 700,
-    backgroundColor : 'blue'
+    backgroundColor : '#ff8a65'
   },
 
+  tablebody: {
+    minWidth: 200,
+    backgroundColor : '#ffccbc'
+  },
+
+  div  : {
+      backgroundColor: '#ff5722',
+      minWidth: '10px',
+     // padding: '15vh',
+     'align-items': 'center',
+      margin:400,
+      marginTop:0,
+      marginBottom:20,
+      display: "flex",
+      border: '9px solid orange'
+  },
+
+  btn : {
+    primary : {
+        variant : "contained", 
+        color : "#ff9e80", 
+        size : "medium",
+        backgroundColor: '#3e2723',
+        textTransform: 'lowercase',
+      }
+  },
+
+  h1: {
+    fontWeight: 800,
+    fontSize: '2rem',
+    lineHeight: 1.2,
+    letterSpacing: 1,
+    align : 'center'
+  },
+
+  formControl : {
+    align : 'center',
+    padding : 20
+  }
 }
+
 
 const typography = {
   useNextVariants: true /* [1] */,
@@ -46,6 +94,7 @@ const typography = {
     fontSize: '2rem',
     lineHeight: 1.2,
     letterSpacing: 1,
+
   },
   h2: {
     fontWeight: 600,

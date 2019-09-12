@@ -9,6 +9,8 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import { useTheme } from "@material-ui/styles";
+
 
 /*const useStyles = makeStyles(theme => ({
   root: {
@@ -31,8 +33,8 @@ import Paper from '@material-ui/core/Paper';
 const SupportList =  () => {
   const { supportlist } = useContext(SupportContext);
  // const classes = useStyles();
- const theme1 = useTheme();
- console.log(theme1)
+ const theme = useTheme();
+ //console.log(theme)
  
   return(
    /* <div className="book-list">
@@ -42,9 +44,9 @@ const SupportList =  () => {
         })}
       </ul>
     </div>*/
-    <div >
+    <div>
         <Paper>
-            <Table >
+            <Table  style = {theme.table.tablehead}>
               <TableHead>
                 <TableRow>
                   <TableCell>Staff Name</TableCell>

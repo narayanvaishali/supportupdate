@@ -8,6 +8,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import { useTheme } from "@material-ui/styles";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -23,10 +24,11 @@ const useStyles = makeStyles(theme => ({
 
 const SupportDetails = ({ support }) => {
   const { removeSupport } = useContext(SupportContext);
-  const classes = useStyles();
+  //const classes = useStyles();
+  const theme = useTheme();
 
   return (
-              <TableBody >
+              <TableBody  style = {theme.table.tablebody}>
                   <TableRow key={support.id}  onClick={() => removeSupport(support.id)}>
                     <TableCell>{support.staffname}
                     </TableCell>
