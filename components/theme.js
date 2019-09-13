@@ -41,16 +41,16 @@ const palette = {
 const table = {
   tablehead: {
     minWidth: 700,
-    backgroundColor : '#ff8a65'
+    backgroundColor : '#9ccc65'
   },
 
   tablebody: {
     minWidth: 200,
-    backgroundColor : '#ffccbc'
+    backgroundColor : '#dcedc8'
   },
 
   div  : {
-      backgroundColor: '#ff5722',
+      backgroundColor: '#9ccc65',
       minWidth: '10px',
      // padding: '15vh',
      'align-items': 'center',
@@ -58,7 +58,8 @@ const table = {
       marginTop:0,
       marginBottom:20,
       display: "flex",
-      border: '9px solid orange'
+      border: '9px solid orange',
+      'text-align': 'center'
   },
 
   btn : {
@@ -76,7 +77,7 @@ const table = {
     fontSize: '2rem',
     lineHeight: 1.2,
     letterSpacing: 1,
-    align : 'center'
+    'text-align': 'center'
   },
 
   formControl : {
