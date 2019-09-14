@@ -1,7 +1,8 @@
+//https://codesandbox.io/s/material-ui-responsive-table-km62k
+
 import React, { useContext } from 'react';
 import { SupportContext } from '../contexts/SupportContext';
 import SupportDetails from './SupportDetails';
-
 import { makeStyles, useTheme } from "@material-ui/styles";
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -10,7 +11,6 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { useTheme } from "@material-ui/styles";
-
 
 /*const useStyles = makeStyles(theme => ({
   root: {
@@ -47,14 +47,14 @@ const SupportList =  () => {
     <div>
         <Paper  style={{ padding: 5}}>
             <Table>
-              <TableHead style={{  backgroundColor : '#ffab91'}}>
-                <TableRow >
-                  <TableCell  style={{ "font-weight": "bold", fontSize : '15px' }}>Staff Name</TableCell>
-                  <TableCell  style={{ "font-weight": "bold", fontSize : '15px' }}>ZD ID</TableCell>
-                  <TableCell  style={{ "font-weight": "bold", fontSize : '15px' }}>Date Worked</TableCell>
-                  <TableCell  style={{ "font-weight": "bold", fontSize : '15px' }}>Priority</TableCell>
-                  <TableCell  style={{ "font-weight": "bold", fontSize : '15px' }}>Current Status</TableCell>
-                  <TableCell  style={{ "font-weight": "bold", fontSize : '15px' }}>Time Spent</TableCell>
+              <TableHead >
+                <TableRow  className = "tablehead1">
+                  <TableCell className = "tablecell">Staff Name</TableCell>
+                  <TableCell className = "tablecell">ZD ID</TableCell>
+                  <TableCell className = "tablecell">Date Worked</TableCell>
+                  <TableCell className = "tablecell">Priority</TableCell>
+                  <TableCell className = "tablecell">Current Status</TableCell>
+                  <TableCell className = "tablecell">Time Spent</TableCell>
                 </TableRow>
               </TableHead>
                {supportlist.map(s => {

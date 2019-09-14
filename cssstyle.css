@@ -1,0 +1,43 @@
+.container {
+  overflow-x: auto;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 50px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.title {
+  margin-top: 20px;
+  text-align: center;
+  font-size : 30px;
+}
+
+.tablehead1 {
+  background-color : '#ffab91';
+}
+
+.tablecell {
+  font-weight: bold;
+  font-size : 15px;
+}
+
+tr {
+  height: 40px !important;
+}
+
+th {
+  max-width: 125px;
+  min-width: 125px;
+  padding: 0 !important;
+  overflow-x: auto;
+  white-space: nowrap;
+  text-align: center !important;
+  font-weight: 900;
+}
+
+td {
+  height: 40px !important;
+  padding: 5px !important;
+  text-align: center !important;
+}

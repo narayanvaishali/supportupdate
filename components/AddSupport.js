@@ -115,10 +115,8 @@ const NewSupportForm = () => {
             color: 'darkblue'
           }}*/
         >
-      <Typography variant="h4" align="center" component="h1" gutterBottom>
-                  Add Support
-      </Typography>
           <form onSubmit={handleSubmit} noValidate>
+           <h1 className="title"> Add Support</h1>
           <Paper style={{ padding: 16 }}>
               <Grid container alignItems="flex-start" spacing={2}>
                   <Grid item xs={6}>
