@@ -45,16 +45,16 @@ const SupportList =  () => {
       </ul>
     </div>*/
     <div>
-        <Paper>
+        <Paper  style={{ padding: 5}}>
             <Table>
-              <TableHead>
-                <TableRow>
-                  <TableCell>Staff Name</TableCell>
-                  <TableCell>ZD ID</TableCell>
-                  <TableCell >Date Worked</TableCell>
-                  <TableCell>Priority</TableCell>
-                  <TableCell>Current Status</TableCell>
-                  <TableCell>Time Spent</TableCell>
+              <TableHead style={{  backgroundColor : '#ffab91'}}>
+                <TableRow >
+                  <TableCell  style={{ "font-weight": "bold", fontSize : '15px' }}>Staff Name</TableCell>
+                  <TableCell  style={{ "font-weight": "bold", fontSize : '15px' }}>ZD ID</TableCell>
+                  <TableCell  style={{ "font-weight": "bold", fontSize : '15px' }}>Date Worked</TableCell>
+                  <TableCell  style={{ "font-weight": "bold", fontSize : '15px' }}>Priority</TableCell>
+                  <TableCell  style={{ "font-weight": "bold", fontSize : '15px' }}>Current Status</TableCell>
+                  <TableCell  style={{ "font-weight": "bold", fontSize : '15px' }}>Time Spent</TableCell>
                 </TableRow>
               </TableHead>
                {supportlist.map(s => {
