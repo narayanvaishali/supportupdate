@@ -5,22 +5,31 @@
 
 import React, { useContext, useState } from 'react';
 import { SupportContext } from '../contexts/SupportContext';
-
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import TypoGraphy from '@material-ui/core/Typography';
-import NativeSelect from '@material-ui/core/NativeSelect';
-import TextField from '@material-ui/core/TextField';
+import CssBaseline from '@material-ui/core/CssBaseline';
+//import TypoGraphy from '@material-ui/core/Typography';
 //import { makeStyles } from '@material-ui/core/styles';
 //import { withTheme } from '@material-ui/core/styles';
 import { useTheme } from "@material-ui/styles";
 
 import {
-  FormControl,
   InputLabel,
   Input,
   Button,
-  TextField
+  TextField,
+  NativeSelect,
+  Container,
+  Typography,
+  Paper,
+  Link,
+  Grid,
+  Button,
+  CssBaseline,
+  RadioGroup,
+  FormLabel,
+  MenuItem,
+  FormGroup,
+  FormControl,
+  FormControlLabel,
 } from "@material-ui/core";
 
 /*const useStyles = makeStyles({
@@ -34,7 +43,7 @@ import {
 const NewSupportForm = () => {
   const theme = useTheme();
 
-  console.log('theme ' + JSON.stringify(theme.table.div));
+  console.log('theme ' + JSON.stringify(theme));
 
   const { addSupport } = useContext(SupportContext);
 
@@ -93,92 +102,97 @@ const NewSupportForm = () => {
   }
 
   return (
-  <div style = {theme.table.div}
-      /*  style={{
-          display: "flex",
-          justifyContent: "center",
-          margin: 20,
-          padding: 20,
-           background: 'lightblue',
-          color: 'darkblue'
-        }}*/
-      >
-        <form  onSubmit={handleSubmit}>
-          <h1 style={theme.table.h1}>Add Support</h1>
-
-          <FormControl margin="normal" fullWidth>
-              <InputLabel htmlFor="uncontrolled-native" >staff name</InputLabel>
-                <NativeSelect name="staffname"  required  value={staffname}
-                    onChange={(e) => setstaffname(e.target.value)}>
-                    {optionItems}
-                </NativeSelect>
-          </FormControl>
-
-          <FormControl margin="normal" fullWidth>
-               <TextField
-                id="outlined-uncontrolled"
-                label="ZD ID"
-                defaultValue="foo"               
-                margin="normal"
-                variant="outlined"
-                value={ZD_ID}
-                required 
-                type="number"
-                onChange={(e) => setZD_ID(e.target.value)}
-              />
-          </FormControl>
-
-          <FormControl margin="normal" fullWidth>
-              <TextField
-                id="outlined-uncontrolled"
-                label=""
-                defaultValue=""               
-                margin="normal"
-                variant="outlined"
-                value={dateworked}
-                required
-                type="date"
-                onChange={(e) => setDateworked(e.target.value)}
-              />
-          </FormControl>
-           <FormControl margin="normal" fullWidth>
-                <TextField
-                id="outlined-uncontrolled"
-                label="time spent"
-                defaultValue="foo"               
-                margin="normal"
-                variant="outlined"
-                value={timespent}
-                required
-                type="number"
-                onChange={(e) => setTimespent(e.target.value)}
-              />
-          </FormControl>
-
-          <FormControl margin="normal" fullWidth>
-          <InputLabel htmlFor="uncontrolled-native">current status</InputLabel>
-           <NativeSelect name="currentstatus"  required  value={currentstatus}  
-                  onChange={(e) => setCurrentstatus(e.target.value)}>
-                    {statusItems}
-            </NativeSelect>
-          </FormControl>
-
-          <FormControl margin="normal" fullWidth>           
-             <InputLabel htmlFor="uncontrolled-native">priority</InputLabel>
-              <NativeSelect name="priority"   required   value={priority}  
-                  onChange={(e) => setPriority(e.target.value)}>
-                    {priorityItems}
-            </NativeSelect>
-          </FormControl>
-          <FormControl style = {theme.table.formControl}>
-                <Button style = {theme.table.btn.primary}  type="submit">
-                  Send
-                </Button>
-          </FormControl>
-        </form>
+    <React.Fragment>
+     <CssBaseline />
+      <div style={{ padding: 16, margin: 'auto', maxWidth: 600 }}
+            /*  style={{
+            display: "flex",
+            justifyContent: "center",
+            margin: 20,
+            padding: 20,
+            background: 'lightblue',
+            color: 'darkblue'
+          }}*/
+        >
+      <Typography variant="h4" align="center" component="h1" gutterBottom>
+                  Add Support
+      </Typography>
+          <form onSubmit={handleSubmit} noValidate>
+          <Paper style={{ padding: 16 }}>
+              <Grid container alignItems="flex-start" spacing={2}>
+                  <Grid item xs={6}>
+                        <FormControl margin="normal" fullWidth>
+                            <InputLabel htmlFor="uncontrolled-native" >staff name</InputLabel>
+                              <NativeSelect name="staffname"  required  value={staffname}
+                                  onChange={(e) => setstaffname(e.target.value)}>
+                                  {optionItems}
+                              </NativeSelect>
+                        </FormControl>
+                    </Grid>
+                    <Grid item xs={6}>
+                        <FormControl margin="normal" fullWidth>
+                            <TextField
+                              id="outlined-uncontrolled"
+                              label="ZD ID"
+                              defaultValue="foo"               
+                              margin="normal"
+                              variant="outlined"
+                              value={ZD_ID}
+                              required 
+                              type="number"
+                              onChange={(e) => setZD_ID(e.target.value)}
+                            />
+                        </FormControl>
+                    </Grid>
+                    <Grid item xs={6}>
+                      <TextField
+                        id="outlined-uncontrolled"
+                        label=""
+                        defaultValue=""               
+                        margin="normal"
+                        variant="outlined"
+                        value={dateworked}
+                        required
+                        type="date"
+                        onChange={(e) => setDateworked(e.target.value)}
+                      />
+                    </Grid>
+                    <Grid item xs={6}>
+                          <TextField
+                          id="outlined-uncontrolled"
+                          label="time spent"
+                          defaultValue="foo"               
+                          margin="normal"
+                          variant="outlined"
+                          value={timespent}
+                          required
+                          type="number"
+                          onChange={(e) => setTimespent(e.target.value)}
+                        />
+                    </Grid>
+                    <Grid item xs={6}>
+                        <InputLabel htmlFor="uncontrolled-native">current status</InputLabel>
+                          <NativeSelect name="currentstatus"  required  value={currentstatus}  
+                                  onChange={(e) => setCurrentstatus(e.target.value)}>
+                                    {statusItems}
+                          </NativeSelect>
+                    </Grid>
+                    <Grid item xs={6}>
+                        <InputLabel htmlFor="uncontrolled-native">priority</InputLabel>
+                          <NativeSelect name="priority"   required   value={priority}  
+                              onChange={(e) => setPriority(e.target.value)}>
+                                {priorityItems}
+                        </NativeSelect>
+                    </Grid>
+                    <Grid item xs={12} align="center">
+                      <Button type="submit">Send</Button>
+                    </Grid>
+              </Grid>
+          </Paper>
+          </form> 
+           <Typography variant="h4" align="center" component="h1" gutterBottom/>
       </div>
-
-
+       </React.Fragment>
   );
 }
  

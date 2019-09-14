@@ -46,7 +46,7 @@ const SupportList =  () => {
     </div>*/
     <div>
         <Paper>
-            <Table  style = {theme.table.tablehead}>
+            <Table>
               <TableHead>
                 <TableRow>
                   <TableCell>Staff Name</TableCell>

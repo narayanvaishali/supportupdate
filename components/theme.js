@@ -25,17 +25,8 @@ const palette = {
   background: {
     default: '#d2bda0',
     paper: '#ecdbc3',
-    secondary: '#353F50',
+    secondary: '#353F50'
   },
-  tb: {
-    minWidth: 700,
-    backgroundColor : 'blue'
-  },
-  divClass: {
-          spacing: "40px",
-          color: "yellow",
-          fontSize: "30px"
-        }
 };
 
 const table = {
@@ -54,7 +45,7 @@ const table = {
       minWidth: '10px',
      // padding: '15vh',
      'align-items': 'center',
-      margin:400,
+      margin:300,
       marginTop:0,
       marginBottom:20,
       display: "flex",
@@ -72,14 +63,6 @@ const table = {
       }
   },
 
-  h1: {
-    fontWeight: 800,
-    fontSize: '2rem',
-    lineHeight: 1.2,
-    letterSpacing: 1,
-    'text-align': 'center'
-  },
-
   formControl : {
     align : 'center',
     padding : 20
@@ -92,10 +75,12 @@ const typography = {
   fontFamily: 'Poppins, sans-serif',
   h1: {
     fontWeight: 800,
-    fontSize: '2rem',
+    fontSize: '22rem',
     lineHeight: 1.2,
     letterSpacing: 1,
-
+    'text-align': 'center',
+    textTransform: 'uppercase',
+     margin:300,
   },
   h2: {
     fontWeight: 600,
@@ -137,6 +122,7 @@ const typography = {
     fontWeight: 500,
     fontSize: '1rem',
     lineHeight: 1.5,
+   
   },
   body2: {
     fontWeight: 500,
@@ -149,6 +135,14 @@ const typography = {
     lineHeight: 1.5,
     textTransform: 'uppercase',
     letterSpacing: 0.5,
+    'text-align': 'center',
+     backgroundColor : '#ff8a65',
+     color : 'white',
+      marginBottom:20,  
+  },
+   divButton  : {
+     'align-items': 'center',
+     'text-align': 'center'
   },
   caption: {
     fontWeight: 700,
@@ -156,17 +150,28 @@ const typography = {
     lineHeight: 1.66,
     letterSpacing: 0.5,
   },
+  
+  div  : {
+      backgroundColor: 'pink',
+      minWidth: '10px',
+     // padding: '15vh',
+     'align-items': 'center',
+      margin:300,
+      marginTop:0,
+      marginBottom:20,
+      display: "flex",
+      border: '9px solid orange',
+      'text-align': 'center'
+  },
   overline: {
     fontWeight: 400,
     fontSize: '0.75rem',
     lineHeight: 2.66,
     textTransform: 'uppercase',
   },
-
-
 };
 
 const light = createMuiTheme({ typography });
-const supporttheme = createMuiTheme({ palette, typography, table });
+const supporttheme = createMuiTheme({ palette, typography });
 
 export { light, supporttheme };

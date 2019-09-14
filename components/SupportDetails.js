@@ -28,7 +28,7 @@ const SupportDetails = ({ support }) => {
   const theme = useTheme();
 
   return (
-              <TableBody  style = {theme.table.tablebody}>
+              <TableBody>
                   <TableRow key={support.id}  onClick={() => removeSupport(support.id)}>
                     <TableCell>{support.staffname}
                     </TableCell>

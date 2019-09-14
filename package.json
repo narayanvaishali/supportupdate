@@ -4,12 +4,11 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "4.3.2",
-    "@material-ui/icons": "^4.4.1",
     "@material-ui/styles": "4.3.0",
     "lodash": "^4.17.15",
     "react": "16.9.0",
     "react-dom": "16.9.0",
-    "uuid": "^3.3.2"
+    "uuid": "3.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
