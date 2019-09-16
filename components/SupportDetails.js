@@ -9,6 +9,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { useTheme } from "@material-ui/styles";
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -29,7 +30,7 @@ const SupportDetails = ({ support }) => {
 
   return (
               <TableBody>
-                  <TableRow key={support.id}  onClick={() => removeSupport(support.id)}>
+                  <TableRow key={support.id}  >
                     <TableCell>{support.staffname}
                     </TableCell>
                     <TableCell>{support.ZD_ID}</TableCell>
@@ -37,6 +38,7 @@ const SupportDetails = ({ support }) => {
                     <TableCell>{support.priority}</TableCell>
                     <TableCell>{support.currentstatus}</TableCell>
                     <TableCell>{support.timespent}</TableCell>
+                    <TableCell><DeleteIcon onClick={() => removeSupport(support.id)}/></TableCell>
                   </TableRow>
               </TableBody>
   );
